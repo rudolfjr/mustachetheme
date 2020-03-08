@@ -1,0 +1,283 @@
+@import "compass";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap');
+
+/* Resete de padrões */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root{
+    min-height: 100%;
+}
+
+body{
+    font-family: 'Lato', Arial, Verdana, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased !important;
+    overflow-x: hidden;
+}
+
+body, input, button{
+    font-family: 'Lato', Arial, Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+/* Reposição do topo */
+.navbar{
+    border-top: 1px solid #414141;
+    border-bottom: 3px solid #434040;
+    @include background-image(linear-gradient(to bottom right, #333333, #3a3a3a));
+    .navbar-brand{
+        img{
+            margin-top: 5px;
+        }
+    }
+    form{
+        background-color: #1f1f1f;
+        input, button{
+            background-color: transparent;
+            border:0px;
+        }
+    }    
+
+    @media (max-width: 576px) {
+        form{
+            display: none;
+        }
+    }
+}
+
+/* Configuração do slider e topo do site */
+.bx-wrapper {
+    -moz-box-shadow: 0 0 0px #ccc;
+    -webkit-box-shadow: 0 0 0px #ccc;
+    box-shadow: 0 0 0px #ccc;
+    border: 0px solid #fff;
+    background: transparent;
+    margin-bottom: 0px;
+
+    .bx-pager{
+        z-index: 9999;
+        position: relative;
+        bottom: -30px;
+        width: 300px;
+        margin: 0 auto;
+
+        &.bx-default-pager{
+            a{
+                width: 40px;
+                border-radius: 0px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            margin-bottom: 50px;
+        }
+    }
+
+}
+
+
+
+.sliders
+{
+    .conteudo{
+        display: table;
+        width: 100%;
+        height: 100vh;
+        max-height: 555px;
+        background: {
+            image: image-url("banner.jpg");
+            repeat: no-repeat;
+            position: center;
+        };
+        @include background-size(cover);
+ 
+        .centralizar{
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .conteudo{
+            max-height: 400px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .conteudo{
+            max-height: 200px;
+        }
+    }
+}
+
+.setas-box{
+    border:1px solid #5b5b5f;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+
+    a{
+        display: inline-block;
+        color: #5b5b5f;
+        font-size: 16px;
+        &:hover{
+            color: #5b5b5f;
+        }
+    }
+
+    @media (max-width: 576px) {
+        display: none;
+    }
+}
+
+/* Configurações de textos padroes */
+h1{
+    &.title{
+        margin: 40px 0px;
+        font-weight: 700;
+
+        @media (max-width: 576px) {
+            font-size: 24px;
+        }
+    }
+}
+
+/* cards */
+.card{
+    max-width: 370px;
+    .caixa-imagem{
+        display: block;
+        width: 100%;
+        height: 150px;
+        padding: 15px;
+        background: {
+            image: image-url("card.jpg");
+            repeat: no-repeat;
+            position: center;
+        };
+        @include background-size(cover);
+
+        a{
+            display: inline-block;
+            padding: 5px 20px;
+            background-color: #221e40;
+            color: #fff;
+            transition: background 0.5s;
+            &:hover{
+                text-decoration: none;
+                background-color: #231973;
+            }
+        }
+    }
+
+    h2{
+        font-weight: 700;
+        margin: 0px;
+        margin-bottom: 15px;
+        @media (max-width: 576px) {
+            font-size: 20px;
+        }
+    }
+
+    .card-body{
+        padding: 30px 50px;
+        .btn{
+            border:1px solid #5b5b5f;
+            background-color: #fff;
+            color: #5b5b5f;
+            display: block;
+            text-align: center;
+            margin: 15px 0px;
+            padding: 10px 40px;
+            &:hover{
+                color: #fff;
+                transition: background 0.5s;
+                background-color: #5b5b5f;
+            }
+        }
+
+        @media (max-width: 576px) {
+           padding: 20px;
+        }
+    }
+}
+
+.bloco-card-empresa{
+    margin: 50px 0px;
+    h3{
+        display: block;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        
+    }
+    hr{
+        border-top: 1px solid #000;
+        margin: 0px auto;
+        margin-top: -9px;
+        margin-bottom: 20px;
+        width: 50px;
+        display: block;
+    }
+    img{
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 576px) {
+        margin: 20px 0px;
+    }
+}
+
+/* estilo para formulário */
+form
+{
+    &.row{
+        input, textarea{
+            width: 100%;
+            border:2px solid #dcdcdc;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button{
+            background-color: #5b5b5f;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+            margin: 15px auto;
+            display: block;
+            border:0px;
+            &:hover{
+                transition: background 0.5s;
+                background-color: #2a2a2a;
+            }
+        }
+    }
+}
+
+
+
+/* estilo para rodapé */
+footer{
+    margin-top: 30px;
+    border-top: 1px solid #d9d9d9;
+    padding: 20px 0px;
+
+    a{
+        color: #000;
+        &:hover{
+            color: #000;
+        }
+    }
+}
