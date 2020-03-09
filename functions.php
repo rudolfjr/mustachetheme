@@ -84,6 +84,22 @@ function my_ajax_enviarForm() {
 
 }
 
+function my_ajax_carregarNoticia() {
+
+
+    $post = get_post( $_POST['id'] );
+
+    if($post){
+        echo json_encode(array('titulo' => $post->post_title, 'descricao' => $post->post_content));
+    }else{
+        echo json_encode(array('titulo' => 'Não foi possível carregar esta notícia, tente mais tarde', 'descricao' => ''));
+    };
+    
+    wp_die();
+
+}
+
+
 
 //Adicionando ações
 add_action('init', 'headerScripts'); // Adicionando scripts no header
@@ -91,4 +107,7 @@ add_action( 'wp_footer', 'footerScripts' ); // Adicionando scripts no footer
 
 add_action( 'wp_ajax_enviarForm', 'my_ajax_enviarForm' );
 add_action( 'wp_ajax_nopriv_enviarForm', 'my_ajax_enviarForm' );
+
+add_action( 'wp_ajax_carregarNoticia', 'my_ajax_carregarNoticia' );
+add_action( 'wp_ajax_nopriv_carregarNoticia', 'my_ajax_carregarNoticia' );
 ?>

@@ -48,7 +48,7 @@
                                 <div class="card-text">
                                     <?php the_excerpt(); ?>
                                 </div>
-                                <a href="<?php the_permalink(); ?>" class="btn">Link Externo</a>
+                                <a href="#" data-toggle="modal" data-target="#modalExemplo" data-id="<?php echo get_the_ID(); ?>" class="btn carregar-noticia">Link Externo</a>
                             </div>
                         </div>
                     </div><!-- slide -->
