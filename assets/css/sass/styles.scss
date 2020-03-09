@@ -29,11 +29,13 @@ body, input, button{
     border-top: 1px solid #414141;
     border-bottom: 3px solid #434040;
     @include background-image(linear-gradient(to bottom right, #333333, #3a3a3a));
+
     .navbar-brand{
         img{
             margin-top: 5px;
         }
     }
+
     form{
         background-color: #1f1f1f;
         input, button{
@@ -41,6 +43,19 @@ body, input, button{
             border:0px;
         }
     }    
+    .navbar-nav{
+        a{
+            display: block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: rgba(255,255,255,.5);
+            text-decoration: none !important;
+            &:hover{
+                color: #fff;
+            }
+        }
+
+    }
 
     @media (max-width: 576px) {
         form{
@@ -241,6 +256,14 @@ h1{
 form
 {
     &.row{
+        .alert-primary{
+            display: none;
+        }
+
+        .alert-danger{
+            display: none;
+        }
+
         input, textarea{
             width: 100%;
             border:2px solid #dcdcdc;
